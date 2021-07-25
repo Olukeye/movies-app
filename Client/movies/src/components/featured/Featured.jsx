@@ -37,21 +37,17 @@ const Featured = ({type}) => {
                     minima quibusdam aut, dignissimos odio provident vero, quisquam necessitatibus explicabo 
                     error debitis dolor a ad neque reiciendis ea reprehenderit!
                 </span>
-
-                        <div className="buttons">
-                            <button className="play">
-                                <PlayArrow/>
-                                <span>Play</span>
-                            </button>
-
-                            <button className="more">
-                                <InfoOutlined/>
-                                <span>Info</span>
-                            </button>
-
-                        </div>
+                <div className="buttons">
+                    <button className="play">
+                        <PlayArrow/>
+                        <span>Play</span>
+                    </button>
+                    <button className="more">
+                        <InfoOutlined/>
+                        <span>Info</span>
+                    </button>
+                </div>
             </div>
-
         </div>
     )
 }

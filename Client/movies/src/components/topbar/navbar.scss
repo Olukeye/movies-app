@@ -4,6 +4,7 @@
     font-size: 14px;
     position: fixed;
     top: 0;
+    z-index: 999;
     background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
 
     &.scrolled {
@@ -15,16 +16,15 @@
         align-items: center;
         justify-content: space-between;
         height: 70px;
-
+ 
        .left{
            display: flex;
            align-items: center;
         img {
-            height: 45px;
+            height: 25px;
             margin-right: 40px;
             width: 80px;
         }
-
         span{
             margin-right: 20px;
             cursor: pointer;
@@ -34,37 +34,38 @@
        .right{
            display:flex;
            align-items: center;
-           img{
+
+           .icons {
+            margin: 0px 15px;
+            cursor: pointer;
+           }
+
+           img {
             width: 30px;
             height: 30px;
             border-radius: 5px;
             object-fit: cover;
             cursor: pointer;
-            z-index: 999;
-        }
-        .icons {
-            margin: 0px 15px;
-            cursor: pointer;
-        }
-       }
+         }
 
-       .profile{
-           .options{
-               display: none;
-               background-color: var(--main-color);
-               border-radius: 4px;
-           }
-           span{
-               padding:10px;
-               cursor: pointer;
-           }
-           &:hover{
+         .profile{
+            .options{
+                display: none;
+                background-color: var(--main-color);
+                border-radius: 4px;
+            }
+            span{
+                padding:10px;
+                cursor: pointer;
+            }
+            &:hover{
              .options{
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-             }
-           }
-       }
-    }
+            }
+        }
+      }
+    }           
+  }
 } 

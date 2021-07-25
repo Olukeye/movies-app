@@ -3,7 +3,7 @@ import   "./listItem.scss"
 const Listitem = () => {
     return (
         <div className="listItem">
-            item
+            item list 
         </div>
     )
 }
