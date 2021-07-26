@@ -28,9 +28,7 @@ const Featured = ({type}) => {
                     
                 </div>
             )}
-            <img src ="https://www.technobuffalo.com/sites/technobuffalo.com/files/styles/xlarge/public/wp/2017/08/netflix-library.jpg"
-            alt=""
-            />
+                 <img src="https://render.fineartamerica.com/images/rendered/medium/acrylic-print/20/30/hangingwire/break/images-medium-5/space-alex-malikov.jpg" alt=""/>
             <div className="info">
                 <img src="https://www.designfreelogoonline.com/wp-content/uploads/2017/05/000840-Infinity-logo-maker-Free-infinito-Logo-design-06.png" alt="" />
                 <span className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta maiores quasi
