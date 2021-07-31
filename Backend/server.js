@@ -1,10 +1,15 @@
 const express = require('express');
 const db      = require('./db/mongoose')
-const authRoute      = require('./routes/auth')
 const dotenv = require('dotenv');
 const cors = require('cors');
 
 const app = express();
+
+
+// const authRoute  = require('./routes/auth')
+const userRoute  = require('./routes/user')
+
+
 
 
 // Load env vars
@@ -18,9 +23,11 @@ app.use(express.json());
 app.use(cors());
 
 
-app.use("/api/auth", authRoute)
+
 /** Mount Routers */
-app.use("/api/auth", authRoute)
+// app.use("/api/auth", authRoute);
+app.use("/api/user", userRoute);
+
 
 
 
