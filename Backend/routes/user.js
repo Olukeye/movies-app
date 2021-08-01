@@ -21,16 +21,6 @@ router.post('/register', async (req, res) => {
    }
 });
 
-// Get a Single user
-router.get('/user/:id', async(req, res) => {
-    try{
-        const user = await User.fndById(req.params.id);
-        const { password, ...info } = user._doc;
-        res.status(200).json(info)
-    } catch(err) {
-        res.sataus(500).json(err);
-    }
-})
 
 // Get all
 router.get('/', verify, async(req, res) => {
@@ -38,13 +28,13 @@ router.get('/', verify, async(req, res) => {
     if(req.user.isAdmin) {
         try{
             // find all users, and limit the query to 10, else just find all
-           const users = query ? await User.find().limit(10) : await Users.find();
+           const users = query ? await User.find().sort({_id:-1}).limit(2) : await User.find(); //"sort({_id:-1})" is to fetch the latest data
             res.status(200).json(users);
         } catch (err) {
             res.status(500).json(err)
         }
     } else {
-        res.status(403).json(err)
+        res.status(403).json("not allowed")
     }
 })
 
@@ -63,7 +53,7 @@ router.post('/login', async (req, res) => {
         originalPassword !== req.body.password && res.status(400).json('Wrong email or password!')
 
         // accessToken
-        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin }, process.env.SECRET_KEY, {expiresIn: "3d"} );
+        const token = jwt.sign({id: user.id, isAdmin: user.isAdmin }, process.env.SECRET_KEY, {expiresIn: "7d"} );
         const {password, ...info } = user._doc;  //Hide user password 
 
         res.status(200).json({...info, token})
@@ -72,6 +62,17 @@ router.post('/login', async (req, res) => {
         res.status(500).json(err)
     }
 })
+
+// Get a Single user
+router.get('/user/:id', async (req, res) => {
+    try{
+        const user = await User.findById(req.params.id);
+        const { password, ...info } = user._doc;
+        res.status(200).json(info);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // Update a user
 router.put('/:id', verify, async(req, res) => {
@@ -107,6 +108,33 @@ router.delete('/:id', verify, async(req, res) => {
         }
     } else {
         res.status(403).json("Your account only is allowed to be deleted!")
+    }
+})
+
+// Get total user of a period
+router.get('/usage', async(req, res) => {
+    const day = new Date();
+    const year = day.setFullYear(day.setFullYear() - 1 );
+
+    const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+    try{
+        const data = await User.aggregate([
+            {
+                $project: {
+                    month: { $month: "$createdAt" },
+                },
+            },
+            {
+                $group: {
+                    _id: "$month",
+                    total: { $sum: 1 },
+                },
+            },
+        ]);
+        res.status(200).json(data);
+
+    } catch (err) {
+        res.status(500).json(err);
     }
 })
 
