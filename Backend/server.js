@@ -5,16 +5,11 @@ const cors = require('cors');
 
 const app = express();
 
-
-// const authRoute  = require('./routes/auth')
 const userRoute  = require('./routes/user')
-
-
-
+const movieRoute  = require('./routes/movies')
 
 // Load env vars
 dotenv.config();
-
 
 // Body parser
 app.use(express.json());
@@ -22,11 +17,10 @@ app.use(express.json());
 // Enable cors
 app.use(cors());
 
-
-
 /** Mount Routers */
-// app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
+app.use("/api/movie", movieRoute);
+
 
 
 

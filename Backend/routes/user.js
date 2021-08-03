@@ -21,7 +21,6 @@ router.post('/register', async (req, res) => {
    }
 });
 
-
 // Get all
 router.get('/', verify, async(req, res) => {
     const query = req.query.new;
@@ -85,7 +84,8 @@ router.put('/:id', verify, async(req, res) => {
         }
         try{
 
-            const updateUser = await User.findByIdAndUpdate(req.params.id, { $set: req.body});
+            const updateUser = await User.findByIdAndUpdate(req.params.id,
+                 { $set: req.body}, {new: true});
             res.status(200).json(updateUser);
 
         } catch (err) {

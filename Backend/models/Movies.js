@@ -5,15 +5,15 @@ const MovieSchema = new mongoose.Schema({
     desc: {type: String},
     img: {type: String},
     imgTitle: {type: String},
-    imgSm: {type: Boolean},
+    imgSm: {type: String},
     thriller: { type: String},
     video: {type: String},
     year: {type: String},
     limit: {type: Number},
-    genre: {type: Boolean},
+    genre: {type: String},
     isSeries: {type: Boolean, default: false}
 },
    { timestamps: true }
 );
 
-module.exports = mongoose.model("Movie", MovieSchema);
+module.exports = mongoose.model("Movies", MovieSchema);
