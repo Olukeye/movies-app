@@ -5,8 +5,10 @@ const cors = require('cors');
 
 const app = express();
 
-const userRoute  = require('./routes/user')
-const movieRoute  = require('./routes/movies')
+const userRoute  = require('./routes/user');
+const movieRoute  = require('./routes/movies');
+const ListRoute  = require('./routes/list')
+
 
 // Load env vars
 dotenv.config();
@@ -20,6 +22,8 @@ app.use(cors());
 /** Mount Routers */
 app.use("/api/user", userRoute);
 app.use("/api/movie", movieRoute);
+app.use("/api/list", ListRoute);
+
 
 
 
