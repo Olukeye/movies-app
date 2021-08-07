@@ -35,11 +35,11 @@ router.delete('/:d', verify, async( req, res ) => {
 
 // Get 
 router.get("/", verify, async( req, res ) => {
-    const typeQuery = req.query.type;     //get movie by its type 
-    const genreQuery = req.query.genre;  //get movie by its genre
+    const typeQuery = req.query.type;     
+    const genreQuery = req.query.genre;  
     let list = [];
     try{
-        if(typeQuery) {  //if query type, show movie
+        if(typeQuery) {  //if query type, show & get movie by its type 
             if(genreQuery) {
                 list = await List.aggregate([
                     { $sample: { size: 10 } },   //get total of 10 random list of movies 
