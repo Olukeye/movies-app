@@ -1,10 +1,35 @@
 import Navbar from '../../components/topbar/Navbar'
 import Featured from '../../components/featured/Featured'
 import List from '../../components/list/List'
-
+import { useState, useEffect } from 'react'
 import './home.scss'
+import axios from 'axios'
+
 
 const Home = ({type})  => {
+    //state
+   const [list, setList] = useState([])
+   const [genre, setGenre] = useState(null)
+
+   // get list of random movies from the API
+   useEffect(() => {
+       const getRandomList = async() => {
+           try{
+               const res = await axios.get(
+                `list${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,{
+                    headers: {
+                        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyODU5MDEyOCwiZXhwIjoxNjI5MTk0OTI4fQ.reeOw9dPT3-StnnXreX4yC90iqkW9Tt-0gIoITLpNDo"
+                    }
+                }
+              );
+              console.log(res)
+            //   setList(res.data)
+           } catch(err) {
+               console.log(err)
+           }
+       };
+       getRandomList();
+   }, [type, genre]);
     return (
         <div className='home'>
              <Navbar />

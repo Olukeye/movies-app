@@ -1,5 +1,6 @@
 import './register.scss'
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Register = () => {
@@ -24,7 +25,7 @@ const Register = () => {
             <div className="top">
             <div className="wrapper">
                 <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt=""/>
-                <button className="login-btn">Login</button>
+               <Link to="login"><button className="login-btn">Login</button></Link>
             </div>
             </div>
             <div className="container">
