@@ -7,13 +7,13 @@ import axios from 'axios'
 
 
 const Home = ({type})  => {
-    //state
+    //states
    const [list, setList] = useState([])
    const [genre, setGenre] = useState(null)
 
    // get list of random movies from the API
    useEffect(() => {
-       const getRandomList = async() => {
+       const getRandomMovieList = async() => {
            try{
                const res = await axios.get(
                 `list${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,{
@@ -22,23 +22,22 @@ const Home = ({type})  => {
                     }
                 }
               );
-              console.log(res)
-            //   setList(res.data)
+              setList(res.data)
            } catch(err) {
                console.log(err)
            }
        };
-       getRandomList();
+       getRandomMovieList();
    }, [type, genre]);
     return (
         <div className='home'>
              <Navbar />
              <Featured type={type} />
-             <List />
-             <List />
-             <List />          
+             {list.map((list) => (
+                 <List list={list} />
+             ))}
         </div>
-    )
-}
+    );
+};
  
 export default Home

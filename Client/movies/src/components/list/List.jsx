@@ -3,7 +3,7 @@ import ListItem from '../listItem/ListItem';
 import { useRef, useState} from "react";
 import  './list.scss';
 
-const List = () => {
+const List = ({list}) => {
 
     const [slider, setSlider] = useState(0);
     const [showArrow, setShowArrow] = useState(false)   //only show pointed arrow when item is clicked
@@ -29,21 +29,14 @@ const List = () => {
 
     return (
         <div className="list">
-            <span className="listTitle">Watch More!</span>
+            <span className="listTitle">{list.title}</span>
             <div className="wrapper">
                 <ArrowBackIosOutlined onClick={()=>handleClick("left")}
                 style={{display:!showArrow && "none"}} className="sliderArrow left"/>
                 <div className="container" ref={listRef}>
-                    <ListItem index={0}/>
-                    <ListItem index={1}/>
-                    <ListItem index={2}/>
-                    <ListItem index={3}/>
-                    <ListItem index={4}/>
-                    <ListItem index={5}/>
-                    <ListItem index={6}/>
-                    <ListItem index={7}/>
-                    <ListItem index={8}/>
-                    <ListItem index={9}/>
+                    {list.content.map((item, i) => (
+                        <ListItem index={i} item={item}/>
+                    ))}
                 </div>
                 < ArrowForwardIosOutlined onClick={()=> handleClick("right")} 
                  className="sliderArrow right"/>
