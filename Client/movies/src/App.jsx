@@ -14,10 +14,10 @@ const App = () => {
             {/* if "?" is useer, redirect to homepage else ":" redirect to register page */}
             {user ? <Home /> : <Redirect to="/register" /> }
           </Route>
-          <Route  path="/">
+          <Route  path="/register">
             {!user ? <Register /> : <Redirect to="/" /> }
           </Route>
-          <Route  path="/">
+          <Route  path="/login">
             {!user ? <Login /> : <Redirect to="/" /> }
           </Route>
           {

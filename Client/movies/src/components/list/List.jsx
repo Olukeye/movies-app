@@ -31,7 +31,7 @@ const List = ({list}) => {
         <div className="list">
             <span className="listTitle">{list.title}</span>
             <div className="wrapper">
-                <ArrowBackIosOutlined onClick={()=>handleClick("left")}
+                <ArrowBackIosOutlined onClick={()=> handleClick("left")}
                 style={{display:!showArrow && "none"}} className="sliderArrow left"/>
                 <div className="container" ref={listRef}>
                     {list.content.map((item, i) => (

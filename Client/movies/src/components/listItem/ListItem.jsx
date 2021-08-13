@@ -27,13 +27,13 @@ const Listitem = ({index, item}) => {
     }, [item]);
 
     return (
-        <Link to={{ pathname: "/watch", movie: {movie: movie} }}>
+        <Link to={{ pathname: "/watch", movie: movie }}>
         <div className="listItem"
         // hover when a mouse is entered, and unhover when a mouse leaves 
         style={{left:atHovered && index * 225 -50 + index * 2.5}}
         onMouseEnter={()=> setAtHovered(true)}
         onMouseLeave={()=> setAtHovered(false)}>
-            <img src={movie.image} alt="" />
+            <img src={movie.img} alt="" />
             {atHovered && (
                 <>
                  <video src={movie.thriller} autoPlay={true} loop />
