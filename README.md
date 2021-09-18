@@ -1,6 +1,6 @@
 # movies-app
 
-This is mini movie app built with [ExpressJS](http://expressjs.com/) and mode.js for (Backend)
+This is a mini movie app built with bpth React framework for the frontend and [ExpressJS](http://expressjs.com/) and mode.js for (Backend)
 
 ## Getting Started.
 
