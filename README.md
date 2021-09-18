@@ -61,7 +61,7 @@ npm start
 
 We're using prettier for code formating, make sure you install prettier plugins in your editor so you can
 see linting errors as you code and have your code formatted on save by prettier. If formatOnSave doesn't work please google how to set up
-format on save for the eslint & prettier plugins in your editor 🙃
+and save prettier plugins in your editor
 
 ## Project structure
 
