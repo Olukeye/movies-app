@@ -1,7 +1,6 @@
 # movies-app
-# zc_main
 
-This is the Zuri Chat frontend built with [ExpressJS](http://expressjs.com/) (Backend) and [React](https://reactjs.org/) (Frontend)
+This is mini movie app built with [ExpressJS](http://expressjs.com/) and mode.js for (Backend)
 
 ## Getting Started.
 
