@@ -14,16 +14,14 @@ If the output is not the version of your nodejs installation, install nodejs fro
 
 After installing nodejs install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
 
-```bash
-yarn zcmain:install
-```
+
 
 ## STARTING THE SERVER
 
 ### Backend
 
 ```bash
-yarn backend:serve
+nodemon 
 ```
 
 Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
@@ -31,11 +29,11 @@ Open [http://localhost:5000](http://localhost:5000) with your browser to see the
 ### Frontend
 
 ```bash
-yarn frontend:serve
+npm start , to run the app.
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:2021](http://localhost:2021) with your browser to see the result.
 
 ## RUNNING NPM COMMANDS
 
