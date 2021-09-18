@@ -12,7 +12,7 @@ node -v
 
 If the output is not the version of your nodejs installation, install nodejs from [here](https://nodejs.org/en/download/)
 
-After installing nodejs install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
+After installing nodejs, and if you prrfare yarn , you can install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
 
 
 
