@@ -1,6 +1,6 @@
 # movies-app
 
-This is a mini movie app built with bpth React framework for the frontend and [ExpressJS](http://expressjs.com/) and mode.js for (Backend)
+This is a mini movie app built with both React framework for the frontend and [ExpressJS](http://expressjs.com/) and mode.js for (Backend)
 
 ## Getting Started.
 
@@ -12,7 +12,7 @@ node -v
 
 If the output is not the version of your nodejs installation, install nodejs from [here](https://nodejs.org/en/download/)
 
-After installing nodejs, and if you prrfare yarn , you can install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
+After installing nodejs, and if you prefare to use yarn , you can install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
 
 
 
