@@ -8,10 +8,10 @@ const Watch = () => {
     return (
         <div className="watch">
             <Link to="/">
-            <div className="back">
-                <ArrowBackOutlined/>
-                Home
-            </div>
+                <div className="back">
+                    <ArrowBackOutlined/>
+                    Home
+                </div>
             </Link>
             <video className="video" autoPlay progress controls src={movie.video} />
         </div>

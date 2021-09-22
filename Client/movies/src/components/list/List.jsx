@@ -21,7 +21,7 @@ const List = ({list}) => {
         
         if(direction === "right" && slider < 3) {
              // if slider item is on 5 slides, stop sliding
-            setSlider(slider + 1);
+            setSlider(slider + 1 );
             listRef.current.style.transform = `translateX(${- 230 + distance}px)`
          
         }

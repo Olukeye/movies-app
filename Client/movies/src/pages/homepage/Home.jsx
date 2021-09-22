@@ -18,7 +18,7 @@ const Home = ({type})  => {
                const res = await axios.get(
                 `list${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,{
                     headers: {
-                        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyODU5MDEyOCwiZXhwIjoxNjI5MTk0OTI4fQ.reeOw9dPT3-StnnXreX4yC90iqkW9Tt-0gIoITLpNDo"
+                        token: ""
                     }
                 }
               );
