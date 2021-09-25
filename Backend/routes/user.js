@@ -27,7 +27,7 @@ router.get('/', verify, async(req, res) => {
     if(req.user.isAdmin) {
         try{
             // find all users, and limit the query to 10, else just find all
-           const users = query ? await User.find().sort({_id:-1}).limit(2) : await User.find(); //"sort({_id:-1})" is to fetch the latest data
+           const users = query ? await User.find().sort({_id:-1}).limit(5) : await User.find(); //"sort({_id:-1})" is to fetch the latest data
             res.status(200).json(users);
         } catch (err) {
             res.status(500).json(err)
@@ -111,12 +111,12 @@ router.delete('/:id', verify, async(req, res) => {
     }
 })
 
-// Get total user of a period
+// Get total user of a period / statistic
 router.get('/usage', async(req, res) => {
     const day = new Date();
     const year = day.setFullYear(day.setFullYear() - 1 );
 
-    const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+    // const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
     try{
         const data = await User.aggregate([
             {

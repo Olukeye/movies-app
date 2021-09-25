@@ -13,7 +13,7 @@ const Listitem = ({index, item}) => {
             try{
                 const res = await axios.get("/movie/find/" + item,{
                 headers: {
-                    token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyODU5MDEyOCwiZXhwIjoxNjI5MTk0OTI4fQ.reeOw9dPT3-StnnXreX4yC90iqkW9Tt-0gIoITLpNDo"
+                    token: ""
                 },
             });
             setMovie(res.data);
